@@ -107,7 +107,8 @@ class DigitClassifierFlow(FlowSpec):
     # Pseudocode:
     # --
     # aggregate scores using `inputs`
-    # best_index = ...
+    scores = [i.callback.best_model_score for i in inputs]
+    best_index = np.argmin(scores)
     #
     # Type:
     # --
